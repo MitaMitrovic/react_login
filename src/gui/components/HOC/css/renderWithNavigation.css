@@ -1,0 +1,22 @@
+.navbar {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: rgb(1, 1, 105);
+}
+.navBrand{
+  font-size: 22px !important;
+  margin-right: 20px;
+}
+.navbar-toggler {
+  color: white !important;
+}
+.nav-item {
+  text-align: center;
+  margin-right: 15px;
+  font-size: 18px;
+  margin-top: 4px;
+}
+.navLink {
+  color: white !important;
+  text-decoration: none !important;
+}

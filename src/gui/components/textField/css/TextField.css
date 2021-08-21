@@ -1,0 +1,27 @@
+.textContent {
+    margin-bottom: 10px;
+}
+
+.textLabel {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.textInput {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    color: #000000;
+    border: 1px solid #989b9e;
+    border-color: #00000067;
+    border-radius: .25rem;
+}
+
+.textInputError {
+    border-color: #dc3545;
+}
+
+.textLabelError {
+    color: #dc3545;
+}

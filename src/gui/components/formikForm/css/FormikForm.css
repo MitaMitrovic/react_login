@@ -1,0 +1,43 @@
+.loginLabelErrorGroup {
+    margin-top: -10px;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(104, 104, 104, 0.089);
+}
+
+.loginLabelError {
+    color: #dc3545;
+}
+
+.loginTitle {
+    margin-bottom: 15px !important;
+}
+
+.loginCard {
+    margin-top: 10vh !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 35vw;
+}
+.loginButtonGroup {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.loginButton {
+    width: 10vw;
+}
+
+@media only screen and (max-width: 950px) {
+    .loginCard {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+    }
+    .loginButton {
+        width: 100%;
+    }
+  }

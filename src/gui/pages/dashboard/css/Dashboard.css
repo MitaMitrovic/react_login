@@ -1,0 +1,12 @@
+.dashboardContent {
+    text-align: center;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.dashboardCard {
+    height: 80vh;
+    padding-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
