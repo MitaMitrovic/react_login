@@ -26,7 +26,7 @@ export default function useLogin(username: string, password: string) {
             setLoggedIn(true, true)
             setLoginState({ loginSuccess: true, loginError: '' })
         } catch (error) {
-            setLoginState({ loginSuccess: false, loginError: error.data })
+            setLoginState({ loginSuccess: false, loginError: error?.data ? error.data : 'Error while contacting backend.' })
         }
     }
 
