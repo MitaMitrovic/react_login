@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { LoginContext } from "../../../context/LoginContext";
+import { useLoginContext } from "../../../context/LoginContext";
 import BasePage from "../../pages/basePage/basePage"
 import Loader from "../loader/Loader";
 
@@ -10,7 +10,7 @@ import NotAuthorizedRoutes from "./NotAuthorizedRoutes";
 
 export default function AppRouter() {
 
-  const { loggedIn, ready } = useContext(LoginContext)
+  const { loggedIn, ready } = useLoginContext()
 
   const routes = (
     loggedIn ? <AuthorizedRoutes /> : <NotAuthorizedRoutes />

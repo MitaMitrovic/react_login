@@ -19,6 +19,12 @@ const LoginForm = () => {
     if (loginSuccess) {
       history.push(`/dashboard`)
     }
+    return () => {
+      setCredentials({
+        username: '',
+        password: ''
+      })
+    }
     // eslint-disable-next-line
   }, [loginSuccess])
 

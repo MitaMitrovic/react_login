@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 export type LoginContextType = {
     loggedIn: boolean,
@@ -6,11 +6,13 @@ export type LoginContextType = {
     setLoggedIn: (loggedIn: boolean, ready: boolean) => void,
 }
 
-export const LoginContext = React.createContext({
+const LoginContext = React.createContext({
     loggedIn: false,
     ready: false,
     setLoggedIn: (loggedIn: boolean, ready: boolean) => { },
 });
+
+export const useLoginContext = () => useContext(LoginContext)
 
 interface ChildrenProps {
     children?: React.ReactNode

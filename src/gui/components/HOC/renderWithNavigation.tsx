@@ -1,16 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from "reactstrap";
 import { cookieService } from "../../../services/cookies/cookieService";
-import { LoginContext } from "../../../context/LoginContext";
-import { UserContext } from "../../../context/UserContext";
+import { useLoginContext } from "../../../context/LoginContext";
+import { useUserContext } from "../../../context/UserContext";
 import './css/renderWithNavigation.css'
 
 export default function renderWithNavigation(WrappedComponent: React.ComponentType<any>) {
   return () => {
     const [collapsed, setCollapsed] = useState(true)
-    const { setLoggedIn } = useContext(LoginContext)
-    const { firstName, lastName } = useContext(UserContext)
+    const { setLoggedIn } = useLoginContext()
+    const { firstName, lastName } = useUserContext()
 
     const toggleNavbar = () => setCollapsed(!collapsed)
 

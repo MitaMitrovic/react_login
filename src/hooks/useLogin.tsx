@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { LoginContext } from '../context/LoginContext';
+import { useState, useEffect } from 'react';
+import { useLoginContext } from '../context/LoginContext';
 import { login } from '../services/api/loginService';
 import { cookieService } from '../services/cookies/cookieService'
 
@@ -10,7 +10,7 @@ type useLoginState = {
 
 export default function useLogin(username: string, password: string) {
     const [loginState, setLoginState] = useState<useLoginState>({ loginSuccess: false, loginError: '' });
-    const { setLoggedIn } = useContext(LoginContext)
+    const { setLoggedIn } = useLoginContext()
 
     useEffect(() => {
         if (username && password) {
@@ -25,7 +25,7 @@ export default function useLogin(username: string, password: string) {
             cookieService.set('accessToken', token)
             setLoggedIn(true, true)
             setLoginState({ loginSuccess: true, loginError: '' })
-        } catch (error) {
+        } catch (error: any) {
             setLoginState({ loginSuccess: false, loginError: error?.data ? error.data : 'Error while contacting backend.' })
         }
     }

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router";
-import { UserContext } from "../../../context/UserContext";
-import { LoginContext } from "../../../context/LoginContext";
+import { useUserContext } from "../../../context/UserContext";
+import { useLoginContext } from "../../../context/LoginContext";
 import { getUser } from "../../../services/api/userService";
 import { cookieService } from "../../../services/cookies/cookieService";
 
@@ -9,8 +9,8 @@ const AUTHORIZED_ROUTES = ['/dashboard']
 
 export default function BasePage() {
 
-    const { loggedIn, ready, setLoggedIn } = useContext(LoginContext)
-    const { setUserInfo } = useContext(UserContext)
+    const { loggedIn, ready, setLoggedIn } = useLoginContext()
+    const { setUserInfo } = useUserContext()
     const history = useHistory();
 
     useEffect(() => {

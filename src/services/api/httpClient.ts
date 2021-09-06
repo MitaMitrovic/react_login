@@ -15,7 +15,7 @@ const injectToken = (config: AxiosRequestConfig): AxiosRequestConfig => {
         }
 
         return config
-    } catch (error) {
+    } catch (error: any) {
         throw new Error(error)
     }
 };

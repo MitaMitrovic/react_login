@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 export type UserContextType = {
   firstName: string,
@@ -6,12 +6,13 @@ export type UserContextType = {
   setUserInfo: (firstName: string, lastName: string) => void;
 }
 
-export const UserContext = React.createContext({
+const UserContext = React.createContext({
   firstName: '',
   lastName: '',
   setUserInfo: (firstName: string, lastName: string) => { },
 });
 
+export const useUserContext = () => useContext(UserContext)
 
 interface ChildrenProps {
   children?: React.ReactNode
